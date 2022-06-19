@@ -37,7 +37,8 @@ int main()
     
     // build parameter class
     ParametersConstant VolParam(Vol);
-    ParametersConstant rParam(r);
+    //ParametersConstant rParam(r);
+    ParametersPieceWiseConstant rParam{std::vector<double>{0., 1., 3., 6., 12., 14., 18.}, std::vector<double>{0.1, 0.03, 0.0, 0.6, 0.2, 0.3}};
     
     // for vanilla put and call
     PayOffCall thePayOff(Strike);

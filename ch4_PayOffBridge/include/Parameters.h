@@ -16,6 +16,8 @@ need to return the integral or integral sqaure over any time interval
 use bridge design: class Parameter point to an abstract class: ParametersInner
  */
 
+#include <vector>
+
 class ParametersInner
 {
 public:
@@ -69,6 +71,20 @@ public:
 private:
     double Constant;
     double ConstantSquare;
+};
+
+class ParametersPieceWiseConstant : public ParametersInner
+{
+    public:
+      ParametersPieceWiseConstant(std::vector<double> intervals, std::vector<double> constants);
+
+      virtual ParametersInner *clone() const;
+      virtual double Integral(double time1, double time2) const;
+      virtual double IntegralSquare(double time1, double time2) const;
+    
+    private:
+        std::vector<double> Intervals;
+        std::vector<double> Constants;
 };
 
 
