@@ -25,35 +25,12 @@ using namespace std;
 
 int main()
 {
-    double Expiry;
-    double Low, Up;
-    double Spot;
-    double Vol;
-    double r;
-    unsigned long NumberOfPath;
-    
-    //read in parameters
-    cout << "\nEnter expiry: \n";
-    cin >> Expiry;
-    
-    cout << "\nEnter spot: \n";
-    cin >> Spot;
-    
-    cout << "\nEnter vol: \n";
-    cin >> Vol;
-    
-    cout << "\nEnter r: \n";
-    cin >> r;
-    
-    cout << "\nEnter low barrier\n";
-    cin >> Low;
-    
-    cout << "\nEnter up barrier\n";
-    cin >> Up;
-    
-    cout << "\nNumber of paths: \n";
-    cin >> NumberOfPath;
-    
+    double Expiry{15};
+    double Low{1}, Up{10};
+    double Spot{5};
+    double Vol{0.2};
+    double r{0.01};
+    unsigned long NumberOfPath{10000};
     
     PayOffDoubleDigital thePayOff(Low,Up); // prepare payoff object
     VanillaOption theOption(thePayOff,Expiry); // prepare option object
@@ -64,10 +41,7 @@ int main()
                                       r,
                                       NumberOfPath);
     
-    cout << "\n the price for double digital with low barrier = "<<Low << " and up barrier = "<<Up<<" is "<< result<<"\n";
-    
-    double temp;
-    cin >> temp;
+    cout << "\n the price for double digital with low barrier = "<<Low << " and up barrier = "<<Up<<" is "<< result<<"\n" << endl;
     
     return 0;
 }
