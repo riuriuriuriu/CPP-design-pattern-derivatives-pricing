@@ -5,6 +5,7 @@ add_library(libs
     DoubleDigital.cpp
     Random1.cpp
     Vanilla1.cpp
+    Power.cpp
 )
 
 target_include_directories(libs
