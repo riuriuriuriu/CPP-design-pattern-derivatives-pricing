@@ -28,31 +28,12 @@ using namespace std;
 
 int main()
 {
-    double Expiry;
-    double Strike;
-    double Spot;
-    double Vol;
-    double r;
-    unsigned long NumberOfPath;
-    
-    //read in parameters
-    cout << "\nEnter expiry: \n";
-    cin >> Expiry;
-    
-    cout << "\nEnter spot: \n";
-    cin >> Spot;
-    
-    cout << "\nEnter strike: \n";
-    cin >> Strike;
-    
-    cout << "\nEnter vol: \n";
-    cin >> Vol;
-    
-    cout << "\nEnter r: \n";
-    cin >> r;
-    
-    cout << "\nNumber of paths: \n";
-    cin >> NumberOfPath;
+    double Expiry{15};
+    double Strike{10};
+    double Spot{5};
+    double Vol{1};
+    double r{0.5};
+    unsigned long NumberOfPath{10000};
     
     // build parameter class
     ParametersConstant VolParam(Vol);
@@ -94,9 +75,6 @@ int main()
     
     cout << "\nThe price for double digital with low barrier = "<<Low << " and up barrier = "<<Up<<" is "<< resultDouble<<"\n";
     */
-    
-    double temp;
-    cin >> temp;
     
     return 0;
 }

@@ -1,0 +1,2 @@
+add_executable(VanillaMain4.out VanillaMain4.cpp)
+target_link_libraries(VanillaMain4.out libs_ch4_PayOffBridge)
