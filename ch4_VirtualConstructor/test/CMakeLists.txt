@@ -1,0 +1,2 @@
+add_executable(VanillaMain2.out VanillaMain2.cpp)
+target_link_libraries(VanillaMain2.out libs_ch4_VirtualConstructor)

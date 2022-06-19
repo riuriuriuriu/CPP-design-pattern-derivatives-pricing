@@ -16,39 +16,13 @@ using namespace std;
 
 int main()
 {
-    double Expiry;
-    double Strike;
-    double Low, Up;
-    double Spot;
-    double Vol;
-    double r;
-    unsigned long NumberOfPath;
-    
-    //read in parameters
-    cout << "\nEnter expiry: \n";
-    cin >> Expiry;
-    
-    cout << "\nEnter spot: \n";
-    cin >> Spot;
-    
-    cout << "\nEnter strike: \n";
-    cin >> Strike;
-
-    cout << "\nEnter vol: \n";
-    cin >> Vol;
-    
-    cout << "\nEnter r: \n";
-    cin >> r;
-    
-    cout << "\nEnter low barrier\n";
-    cin >> Low;
-    
-    cout << "\nEnter up barrier\n";
-    cin >> Up;
-    
-    cout << "\nNumber of paths: \n";
-    cin >> NumberOfPath;
-    
+    double Expiry{10};
+    double Strike{100};
+    double Low{80}, Up{120};
+    double Spot{102};
+    double Vol{1};
+    double r{0.1};
+    unsigned long NumberOfPath{10000};
     
     // for vanilla put and call
     PayOffCall thePayOff(Strike);
@@ -85,9 +59,6 @@ int main()
                                       NumberOfPath);
     
     cout << "\nThe price for double digital with low barrier = "<<Low << " and up barrier = "<<Up<<" is "<< resultDouble<<"\n";
-    
-    double temp;
-    cin >> temp;
     
     return 0;
 }
