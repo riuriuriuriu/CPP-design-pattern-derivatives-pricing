@@ -66,4 +66,18 @@ class StatisticsFirstFourMoments : public StatisticsMC
     unsigned long PathsDone;
 };
 
+class StatisticsVaR : public StatisticsMC {
+public:
+  StatisticsVaR(double probability);
+  virtual void DumpOneResult(double result);
+  virtual std::vector<std::vector<double>> GetResultsSoFar() const;
+  virtual StatisticsVaR *clone() const;
+
+private:
+  std::vector<double> Samples;
+  double Probability;
+  unsigned long PathsDone;
+  double CalcVaR() const;
+};
+
 #endif /* defined(__ch5_statistics_gatherer__MCStatisitcs__) */

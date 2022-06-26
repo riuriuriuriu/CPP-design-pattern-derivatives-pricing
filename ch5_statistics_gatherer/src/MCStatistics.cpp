@@ -6,6 +6,9 @@
 //  Copyright (c) 2014年 Jared Zhou. All rights reserved.
 //
 
+#include <algorithm>
+#include <cmath>
+
 #include "MCStatistics.h"
 using namespace std;
 
@@ -71,4 +74,52 @@ StatisticsFirstFourMoments *
 StatisticsFirstFourMoments::clone() const
 {
     return new StatisticsFirstFourMoments{*this};
+}
+
+StatisticsVaR::StatisticsVaR(double probability)
+:Samples(vector<double>{}), PathsDone(0)
+{
+    if ( 0. < probability && probability < 1.)
+    {
+        Probability = probability;
+    }
+    else
+    {
+        throw runtime_error("Invalid Probability.");
+    }
+    
+}
+
+void
+StatisticsVaR::DumpOneResult(double result)
+{
+    ++PathsDone;
+    Samples.push_back(result);
+}
+
+double StatisticsVaR::CalcVaR() const
+{
+  double ret{0};
+  auto Samples_ = Samples;
+  sort(Samples_.begin(), Samples_.begin());
+  double idSampleAtVaR = (1 - Probability) * (PathsDone - 1);
+  unsigned long iSampleAtVaR = floor(idSampleAtVaR);
+  ret += (idSampleAtVaR - iSampleAtVaR) *Samples_[iSampleAtVaR + 1];
+  ret += ( 1 - idSampleAtVaR + iSampleAtVaR) * Samples_[iSampleAtVaR];
+  return ret;
+}
+
+vector<vector<double>> 
+StatisticsVaR::GetResultsSoFar() const {
+  vector<vector<double>> Results(1, vector<double>(1));
+
+  Results[0][0] = CalcVaR();
+
+  return Results;
+}
+
+StatisticsVaR *
+StatisticsVaR::clone() const 
+{
+  return new StatisticsVaR{*this};
 }
