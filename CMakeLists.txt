@@ -10,3 +10,6 @@ add_subdirectory(ch4_VirtualConstructor/test)
 
 add_subdirectory(ch4_PayOffBridge/src)
 add_subdirectory(ch4_PayOffBridge/test)
+
+add_subdirectory(ch5_statistics_gatherer/src)
+add_subdirectory(ch5_statistics_gatherer/test)

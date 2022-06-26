@@ -27,30 +27,12 @@ using namespace std;
 
 int main()
 {
-    double Expiry;
-    double Strike;
-    double Spot;
-    double Vol;
-    double r;
-    unsigned long NumberOfPaths;
-    
-    cout << "\nEnter expiry:\n";
-    cin >> Expiry;
-    
-    cout << "\nStrike:\n";
-    cin >> Strike;
-    
-    cout << "\nEnter spot:\n";
-    cin >> Spot;
-    
-    cout << "\nEnter vol:\n";
-    cin >> Vol;
-    
-    cout << "\nr:\n";
-    cin >> r;
-    
-    cout << "\nNumber of paths:\n";
-    cin >> NumberOfPaths;
+    double Expiry{10};
+    double Strike{100};
+    double Spot{110};
+    double Vol{1};
+    double r{0.01};
+    unsigned long NumberOfPaths{10000000};
     
     PayOffCall thePayOff(Strike);
     VanillaOption theOption(thePayOff, Expiry);
