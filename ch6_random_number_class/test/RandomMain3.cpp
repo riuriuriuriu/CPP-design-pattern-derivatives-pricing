@@ -35,32 +35,13 @@ using namespace std;
 
 int main()
 {
-    double Expiry;
-    double Strike;
-    double Spot;
-    double Vol;
-    double r;
-    unsigned long NumberOfPaths;
-    
-    cout << "\nEnter expiry:\n";
-    cin >> Expiry;
-    
-    cout << "\nEnter Strike:\n";
-    cin >> Strike;
-    
-    cout << "\nEnter spot:\n";
-    cin >> Spot;
-    
-    cout << "\nEnter vol:\n";
-    cin >> Vol;
-    
-    cout << "\nEnter r:\n";
-    cin >> r;
-    
-    cout << "\nEnter Number of paths:\n";
-    cin >> NumberOfPaths;
-    
-    
+    double Expiry{10};
+    double Strike{100};
+    double Spot{100};
+    double Vol{0.1};
+    double r{0.02};
+    unsigned long NumberOfPaths{10000000};
+
     // for call option
     PayOffCall thePayOff(Strike);
     VanillaOption theOption(thePayOff,Expiry);

@@ -13,3 +13,6 @@ add_subdirectory(ch4_PayOffBridge/test)
 
 add_subdirectory(ch5_statistics_gatherer/src)
 add_subdirectory(ch5_statistics_gatherer/test)
+
+add_subdirectory(ch6_random_number_class/src)
+add_subdirectory(ch6_random_number_class/test)

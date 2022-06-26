@@ -54,7 +54,7 @@ Size(original.Size), Capacity(original.Size)
 
 MJArray::~MJArray()
 {
-	if (ValuesPtr >0)
+	if (Size >0)
 		delete [] ValuesPtr;
 }
 
@@ -244,7 +244,7 @@ double MJArray::min() const
 	{
 		throw("cannot take min of empty array");
 	}
-#endif RANGE_CHECKING
+#endif
     
 	double* tmp = ValuesPtr;
 	double* endTmp = EndPtr;
@@ -262,7 +262,7 @@ double MJArray::max() const
 	{
 		throw("cannot take max of empty array");
 	}
-#endif RANGE_CHECKING
+#endif
 	double* tmp = ValuesPtr;
 	double* endTmp = EndPtr;
     
