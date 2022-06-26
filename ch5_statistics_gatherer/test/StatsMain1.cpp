@@ -38,7 +38,7 @@ int main()
     VanillaOption theOption(thePayOff, Expiry);
     ParametersConstant VolParam(Vol);
     ParametersConstant rParam(r);
-    StatisticsMean gatherer;
+    StatisticsFirstFourMoments gatherer;
     ConvergenceTable gathererTwo(gatherer);
     
     SimpleMonteCarlo5(theOption, Spot, VolParam, rParam, NumberOfPaths, gathererTwo);

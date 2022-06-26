@@ -38,5 +38,37 @@ StatisticsMC* StatisticsMean::clone()const
     return new StatisticsMean(*this);
 }
 
+StatisticsFirstFourMoments::StatisticsFirstFourMoments()
+:PathsDone(0), RunningSum(0), RunningSum2(0), RunningSum3(0), RunningSum4(0)
+{
 
+}
 
+void
+StatisticsFirstFourMoments::DumpOneResult(double result)
+{
+    ++PathsDone;
+    RunningSum += result;
+    RunningSum2 += result * result;
+    RunningSum3 += result * result * result;
+    RunningSum4 += result * result * result * result;
+}
+
+vector<vector<double>> 
+StatisticsFirstFourMoments::GetResultsSoFar() const
+{
+    vector<vector<double>> Results(1,vector<double>(4));
+
+    Results[0][0] = RunningSum / PathsDone;
+    Results[0][1] = RunningSum2 / PathsDone;
+    Results[0][2] = RunningSum3 / PathsDone;
+    Results[0][3] = RunningSum4 / PathsDone;
+
+    return Results;
+}
+
+StatisticsFirstFourMoments *
+StatisticsFirstFourMoments::clone() const
+{
+    return new StatisticsFirstFourMoments{*this};
+}
