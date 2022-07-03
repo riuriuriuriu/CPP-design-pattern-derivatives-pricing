@@ -9,12 +9,6 @@
 #include "Random2.h"
 #include "Normals.h"
 
-// the basic math functions should be in namespace std but aren't in VCPP6
-#if !defined(_MSC_VER)
-using namespace std;
-#endif
-
-
 void RandomBase::GetGaussians(MJArray& variates)
 {
     GetUniforms(variates);

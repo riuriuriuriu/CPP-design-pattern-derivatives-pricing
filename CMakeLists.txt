@@ -16,3 +16,6 @@ add_subdirectory(ch5_statistics_gatherer/test)
 
 add_subdirectory(ch6_random_number_class/src)
 add_subdirectory(ch6_random_number_class/test)
+
+add_subdirectory(ch7_exotics_engine_and_template_pattern/src)
+add_subdirectory(ch7_exotics_engine_and_template_pattern/test)

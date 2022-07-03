@@ -15,6 +15,7 @@ class RandomBase
 {
 public:
     RandomBase(unsigned long Dimensionality_);
+    virtual ~RandomBase(){};
     
     inline unsigned long GetDimensionality() const; // simple method, no need to be virtual
     virtual RandomBase* clone() const=0;

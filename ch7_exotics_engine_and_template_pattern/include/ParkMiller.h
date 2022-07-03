@@ -34,7 +34,8 @@ class RandomParkMiller: public RandomBase
 {
 public:
     RandomParkMiller(unsigned long Dimensionality, unsigned long Seed=1);
-    
+    virtual ~RandomParkMiller(){};
+
     virtual RandomBase* clone() const;
     virtual void GetUniforms(MJArray& variates);
     virtual void Skip(unsigned long numberOfPaths);

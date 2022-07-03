@@ -16,6 +16,7 @@ class AntiThetic : public RandomBase
 {
 public:
     AntiThetic(const Wrapper<RandomBase>& innerGenerator);// wrapper object point to a random number generator
+    virtual ~AntiThetic(){};
     
     virtual RandomBase* clone() const;
     virtual void GetUniforms(MJArray& variates);

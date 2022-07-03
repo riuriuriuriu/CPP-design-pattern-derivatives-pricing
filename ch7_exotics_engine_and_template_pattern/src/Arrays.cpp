@@ -1,14 +1,14 @@
 //
 //  Arrays.cpp
-//  ch7_exotics_engine_and_template_pattern
+//  ch6_random_number_class
 //
-//  Created by cheerzzh on 21/6/14.
+//  Created by cheerzzh on 19/6/14.
 //  Copyright (c) 2014年 Jared Zhou. All rights reserved.
 //
 
 #include "Arrays.h"
-#include <algorithm>
-#include <numeric>
+#include<algorithm>
+#include<numeric>
 
 MJArray::MJArray(unsigned long size)
 : Size(size), Capacity(size)
@@ -54,7 +54,7 @@ Size(original.Size), Capacity(original.Size)
 
 MJArray::~MJArray()
 {
-	if (ValuesPtr >0)
+	if (Size >0)
 		delete [] ValuesPtr;
 }
 
@@ -244,7 +244,7 @@ double MJArray::min() const
 	{
 		throw("cannot take min of empty array");
 	}
-#endif RANGE_CHECKING
+#endif
     
 	double* tmp = ValuesPtr;
 	double* endTmp = EndPtr;
@@ -262,7 +262,7 @@ double MJArray::max() const
 	{
 		throw("cannot take max of empty array");
 	}
-#endif RANGE_CHECKING
+#endif
 	double* tmp = ValuesPtr;
 	double* endTmp = EndPtr;
     
@@ -278,3 +278,6 @@ MJArray MJArray::apply(double f(double)) const
 	return result;
     
 }
+
+
+

@@ -1,13 +1,13 @@
 //
 //  Wrapper.h
-//  ch7_exotics_engine_and_template_pattern
+//  ch6_random_number_class
 //
-//  Created by cheerzzh on 21/6/14.
+//  Created by cheerzzh on 19/6/14.
 //  Copyright (c) 2014年 Jared Zhou. All rights reserved.
 //
 
-#ifndef __ch7_exotics_engine_and_template_pattern__Wrapper__
-#define __ch7_exotics_engine_and_template_pattern__Wrapper__
+#ifndef __ch6_random_number_class__Wrapper__
+#define __ch6_random_number_class__Wrapper__
 
 template <class T>
 
@@ -78,4 +78,4 @@ private:
     T* DataPtr;
 };
 
-#endif /* defined(__ch7_exotics_engine_and_template_pattern__Wrapper__) */
+#endif /* defined(__ch6_random_number_class__Wrapper__) */
