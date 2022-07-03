@@ -15,6 +15,7 @@ add_library(libs_ch7
     Parameters.cpp
     PathDependentAsian.cpp
     Random2.cpp
+    PathDependentGeometricAsian.cpp
 )
 
 target_include_directories(libs_ch7

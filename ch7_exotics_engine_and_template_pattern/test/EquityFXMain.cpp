@@ -24,13 +24,14 @@
  Random2.cpp,
  */
 
-#include "Parameters.h"
-#include "MCStatistics.h"
-#include "ConvergenceTable.h"
 #include "AntiThetic.h"
-#include "PathDependentAsian.h"
+#include "ConvergenceTable.h"
 #include "ExoticBSEngine.h"
+#include "MCStatistics.h"
+#include "Parameters.h"
 #include "ParkMiller.h"
+#include "PathDependentAsian.h"
+#include "PathDependentGeometricAsian.h"
 #include "PayOff3.h"
 #include <iostream>
 using namespace std;
@@ -58,7 +59,7 @@ int main()
     ParametersConstant rParam(r);
     ParametersConstant dParam(d);
     
-    PathDependentAsian theOption(times, Expiry, thePayOff);
+    PathDependentGeometricAsian theOption(times, Expiry, thePayOff);
     
     StatisticsMean gatherer;
     ConvergenceTable gathererTwo(gatherer);
