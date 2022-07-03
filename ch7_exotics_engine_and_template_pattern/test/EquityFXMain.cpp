@@ -32,6 +32,7 @@
 #include "ParkMiller.h"
 #include "PathDependentAsian.h"
 #include "PathDependentGeometricAsian.h"
+#include "PathDependentUpOutRebate.h"
 #include "PayOff3.h"
 #include <iostream>
 using namespace std;
@@ -42,11 +43,13 @@ int main()
     double Expiry{10};
     double Strike{100};
     double Spot{100};
+    double Barrier{150};
+    double Rebate{500};
     double Vol{1};
     double r{0.1};
     double d{0.01};
     unsigned long NumberOfPaths{1000000};
-    unsigned NumberOfDates{10}; // averaging frequency in Asian option
+    unsigned NumberOfDates{50}; // averaging frequency in Asian option
     
     PayOffCall thePayOff(Strike);
     
@@ -59,7 +62,7 @@ int main()
     ParametersConstant rParam(r);
     ParametersConstant dParam(d);
     
-    PathDependentGeometricAsian theOption(times, Expiry, thePayOff);
+    PathDependentUpOutRebate theOption(times, Expiry, Rebate, Barrier, thePayOff);
     
     StatisticsMean gatherer;
     ConvergenceTable gathererTwo(gatherer);

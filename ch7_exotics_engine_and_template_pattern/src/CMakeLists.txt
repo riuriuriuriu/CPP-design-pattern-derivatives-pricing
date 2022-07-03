@@ -16,6 +16,7 @@ add_library(libs_ch7
     PathDependentAsian.cpp
     Random2.cpp
     PathDependentGeometricAsian.cpp
+    PathDependentUpOutRebate.cpp
 )
 
 target_include_directories(libs_ch7
